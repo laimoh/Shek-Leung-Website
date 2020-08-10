@@ -1,0 +1,300 @@
+/* variables */
+:root {
+    --grCol1: #ffffff;
+    --grCol2: #E1E1E1;
+    --grCol3: #B4B4B4;
+    --grCol4: rgb(143, 143, 143);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+
+}
+
+.container {
+    /* border: solid 1px red; */
+    width: 300vw;
+    height: 300vh;
+    position: fixed;
+    /* z-index: 10; */
+    top: 0;
+    left: 0;
+    transform: translate(0, 0, 0);
+    transition: transform 1s;
+
+}
+
+.test-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.test-bg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* landing */
+
+.home-container {
+    /* border: solid 5px green; */
+    width: 100vw;
+    height: 100vh;
+    /* transform: translate(-100vw, 0); */
+
+}
+
+.bg-home {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.bg-home img {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-move {
+    animation: fade 6s ease-out alternate infinite;
+}
+
+.text-fade {
+    animation: color-text 6s ease-out alternate infinite;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes color-text {
+    from {
+        color: black;
+    }
+
+    to {
+        color: white;
+    }
+
+}
+
+.logo-center {
+    position: absolute;
+    display: flex;
+    display: inline-block;
+    top: 45vh;
+    left: 39vw;
+
+}
+
+.logo-center p {
+    font-family: Helvetica, sans-serif;
+    font-size: 4rem;
+
+}
+
+svg {
+    width: 991;
+    height: 667;
+    position: absolute;§
+    left: -50vw;
+}
+
+/* landing pg buttons */
+.nav-button-h {
+    /* border: solid 1px red; */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    width: 100vw;
+    top: 40%;
+    left: 0.5rem;
+    z-index: 100;
+    font-family: Helvetica, sans-serif;
+    font-size: 2rem;
+    /* transition: */
+}
+
+#pressbtn {
+
+    align-self: center;
+    transform: rotate(-90deg);
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+#aboutbtn {
+
+    align-self: center;
+    transform: rotate(90deg);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#logo-center {
+    font-size: 4rem;
+    line-height: 20vh;
+    letter-spacing: 1rem;
+}
+
+.nav-button-v {
+    /* border: solid 1px red; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    width: 10vw;
+    top: 5vh;
+    left: 15%;
+    text-align: right;
+    z-index: 10;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#colbtn {
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#projbtn {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+/* gradient animation on click of button add class js */
+
+/* .animate-this {
+    animation: 
+       first-animation 2s infinite, 
+       another-animation 1s;
+ } */
+
+/* press page */
+
+.press-container {
+    /* border: solid 2px blue; */
+    width: 90vw;
+    height: 100vh;
+    background: url("72ppi/Asset 3.png");
+    background-size: 100% 100%;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    left: -90vw;
+
+}
+
+/* about page */
+
+.about-container {
+    /* border: solid 2px purple; */
+    background: url("72ppi/Asset 3.png");
+    background-size: 100% 100%;
+    width: 90vw;
+    height: 100vh;
+    position: absolute;
+    left: 100vw;
+    top: 0;
+}
+
+/* collections page */
+
+.collection-container {
+    /* border: solid 2px black; */
+    background: url("72ppi/Asset 3.png");
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    left: 0;
+    top: -90vh;
+
+}
+
+.bg-col {
+    background: url("72ppi/Asset 3.png");
+    background-size: 100% 100%;
+    width: inherit;
+    height: inherit;
+    left: 0;
+    /* mix-blend-mode: darken;j */
+}
+
+.bg-col2 {
+    background: url("72ppi/Asset 3.png");
+    background-size: 100% 100%;
+    background-position: -30vh;
+    width: inherit;
+    height: inherit;
+    left: 0;
+    top: 0;
+    border: solid red 1px;
+}
+
+
+
+/* projects container */
+.projects-container {
+    /* border: solid 2px orange; */
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    left: 0;
+    top: 100vh;
+    background: url('img/col-proj-bg.gif');
+    background-size: 100% 100%;
+}
+
+/* open other pages */
+
+.openPress {
+    -webkit-transform: translate3d(90vw, 0, 0);
+    transform: translate3d(90vw, 0, 0);
+    transition: transform 1s;
+}
+
+.openAbout {
+    -webkit-transform: translate3d(-90vw, 0, 0);
+    transform: translate3d(-90vw, 0, 0);
+    transition: transform 1s;
+}
+
+.openCollection {
+    -webkit-transform: translate3d(0, 90vh, 0);
+    transform: translate3d(0, 90vh, 0);
+    transition: transform 1s;
+}
+
+.openProjects {
+    -webkit-transform: translate3d(0, -90vh, 0);
+    transform: translate3d(0, -90vh, 0);
+    transition: transform 1s;
+}
