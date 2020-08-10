@@ -116,12 +116,13 @@ body {
 
 }
 
-svg {
-    width: 991;
-    height: 667;
-    position: absolute;§
-    left: -50vw;
+#oval {
+    border: solid red 1px;
 }
+#oval-outline {
+    fill: pink;
+}
+
 
 /* landing pg buttons */
 .nav-button-h {
