@@ -116,13 +116,6 @@ body {
 
 }
 
-#oval {
-    border: solid red 1px;
-}
-#oval-outline {
-    fill: pink;
-}
-
 
 /* landing pg buttons */
 .nav-button-h {
@@ -161,6 +154,7 @@ body {
     font-size: 4rem;
     line-height: 20vh;
     letter-spacing: 1rem;
+    font-weight: bold;
 }
 
 .nav-button-v {
@@ -190,46 +184,143 @@ body {
     cursor: pointer;
 }
 
-/* gradient animation on click of button add class js */
-
-/* .animate-this {
-    animation: 
-       first-animation 2s infinite, 
-       another-animation 1s;
- } */
-
 /* press page */
 
 .press-container {
     /* border: solid 2px blue; */
     width: 90vw;
     height: 100vh;
-    background: url("72ppi/Asset 3.png");
-    background-size: 100% 100%;
-    transform: scaleX(-1);
     position: absolute;
+    left: 100vw;
     top: 0;
-    left: -90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
+
+
+.img-grid {
+    /* border: 1px green solid; */
+    width: 70vw;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2rem;
+    overflow: scroll;
+    overflow-x: hidden;
+
+
+}
+
+.img-grid::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.press-info {
+    width: 350px;
+    height: 460px;
+    padding: 1.5rem;
+    perspective: 1000;
+
+    /* animation: opacity linear 1s; */
+    /* border: 1px solid grey; */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.press-info:hover .card {
+    transform: rotateY(-180deg);
+}
+
+.press-info p {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.face.front img {
+    width: 100%;
+    height: 100%;
+}
+
+.face.back {
+    border: solid 1px black;
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    padding: 2rem;
+    color: black;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+.contact {
+    /* border: solid 1px green; */
+    width: 5vw;
+    height: 30vh;
+    display: inline-block;
+    position: relative;
+    font-size: 3rem;
+    padding: 0.5rem;
+    right: 0;
+
+}
+
+.icon {
+    border: solid black 2px;
+    text-align: center;
+}
+
+.ig {
+    font-size: 2rem;
+}
+
+.phone p::before {
+    content: '';
+    display: block;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background: red;
+    width: 30px;
+    height: 60px;
+}
+
 
 /* about page */
 
 .about-container {
-    /* border: solid 2px purple; */
-    background: url("72ppi/Asset 3.png");
-    background-size: 100% 100%;
+    border: solid 2px purple;
     width: 90vw;
     height: 100vh;
     position: absolute;
-    left: 100vw;
     top: 0;
+    left: 90vw;
+
 }
 
 /* collections page */
 
 .collection-container {
-    /* border: solid 2px black; */
+    border: solid 2px black;
     background: url("72ppi/Asset 3.png");
     background-size: 100% 100%;
     width: 100vw;
@@ -240,28 +331,6 @@ body {
 
 }
 
-.bg-col {
-    background: url("72ppi/Asset 3.png");
-    background-size: 100% 100%;
-    width: inherit;
-    height: inherit;
-    left: 0;
-    /* mix-blend-mode: darken;j */
-}
-
-.bg-col2 {
-    background: url("72ppi/Asset 3.png");
-    background-size: 100% 100%;
-    background-position: -30vh;
-    width: inherit;
-    height: inherit;
-    left: 0;
-    top: 0;
-    border: solid red 1px;
-}
-
-
-
 /* projects container */
 .projects-container {
     /* border: solid 2px orange; */
@@ -270,7 +339,7 @@ body {
     position: absolute;
     left: 0;
     top: 100vh;
-    background: url('img/col-proj-bg.gif');
+    background: url('72ppi/Asset\ 3.png');
     background-size: 100% 100%;
 }
 
