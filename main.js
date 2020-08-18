@@ -1,3 +1,7 @@
+
+
+var swup = new Swup();
+
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
 let aboutbtn = document.getElementById('aboutbtn');
@@ -101,45 +105,13 @@ el.addEventListener("mousemove", (e) => {
 
 //  language button toggle
 
-let engBox = document.getElementById('eng'),
-   manBox = document.getElementById('man')
-langbtn = document.querySelector('.langChange');
+const engBox = document.getElementById('eng');
+const manBox = document.getElementById('man');
+const langbtn = document.querySelector('.langChange');
+
 
 langbtn.addEventListener('click', function () {
+   engBox.classList.toggle('transparent');
    console.log(engBox.classList);
-   if (engBox.classList.contains('hidden')) {
-      engBox.classList.remove('hidden');
-      setTimeout(function () {
-         engBox.classList.remove('visuallyhidden');
-      }, 20);
-   } else {
-      engBox.classList.add('visuallyhidden');
-      engBox.addEventListener('transitionend', function (e) {
-         engBox.classList.add('hidden');
-      }, {
-         capture: false,
-         once: true,
-         passive: false
-      });
-   }
-
-}, false);
-
-langbtn.addEventListener('click', function () {
-   console.log(manBox.classList);
-   if (manBox.classList.contains('seen')) {
-      manBox.classList.remove('seen');
-      setTimeout(function () {
-         manBox.classList.remove('visual');
-      }, 20);
-   } else {
-      manBox.classList.add('viusal');
-      manBox.addEventListener('transitionend', function (e) {
-         manBox.classList.add('seen');
-      }, {
-         capture: false,
-         once: true,
-         passive: false
-      });
-   }
-}, false);
+   manBox.classList.toggle('transparent');
+});

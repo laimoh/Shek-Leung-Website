@@ -5,13 +5,15 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Shek Leung</title>
+   <script defer src="node_modules/swup/dist/swup.min.js"></script>
+   <!-- <script defer src ="main.js"></script> -->
    <link rel="stylesheet" href="style.css">
+   <title>Shek Leung</title>
 </head>
 
 <body>
    <div id="container" class="container">
-      <div class="home-container">
+      <div class="home-container transition-move" id="swup">
          <div class="bg-home bg-move">
             <img src="72ppi/Asset 3.png" alt="film">
          </div>
@@ -21,7 +23,7 @@
             <p id="aboutbtn">PRESS</p>
          </div>
          <div class="nav-button-v text-fade">
-            <p id="colbtn">COLLECTION</p>
+            <a href="/collections.html" class="text-fade" id="colbtn">COLLECTIONS</a>
             <p id="projbtn">PROJECTS</p>
          </div>
       </div>
@@ -361,32 +363,33 @@
          <div class="textSection">
 
             <div class="eng about" id="eng">
-               <p><b>SHEK LEUNG</b> is a London-based eponymous studio run by Samson (Shek Yen) Leung. SHEK LEUNG,
+               <p>SHEK LEUNG is a London-based eponymous studio run by Samson (Shek Yen) Leung. SHEK LEUNG,
                   through moving images, translates intangible emotions and narratives into the tangibles. It is a
                   brand that pursues the altruism and honesty through acceptance of imperfection in artisanal
                   craftsmanship and subtle details. We hope to create a sense of humanistic touch in the dialogues we
-                  have with our audiences.<br>
-                  At <b>SHEK LEUNG</b>, we do not define our customers by sexuality. They embrace their vulnerability
+                  have with our audiences.<br></p><br>
+               <p>At SHEK LEUNG, we do not define our customers by sexuality. They embrace their vulnerability
                   with confidence and express quiet sensuality through masculinity. It is through tactile textures
                   and sensitive details that we bring this vision to life.</p><br>
                <p>Born in Taiwan and raised in Hong Kong, Samson Shek Yen Leung completed his BA and MA Fashion in
                   Womenswear at Central Saint Martins, both collections of which were selected and showcased at the
-                  CSM press show and London Fashion Week. <br> Whilst pursuing his education, Samson’s professional
+                  CSM press show and London Fashion Week. <br><br> Whilst pursuing his education, Samson’s professional
                   experiences broadly encompass a wide range of leading fashion houses, including Proenza Schouler in
                   New York; Craig Green and Aitor Throup in London; Taro Horiuchi and Written Afterwards in Tokyo.
                </p>
             </div>
-            <div class="mandarin about" id="man">
+            <div class="mandarin about transparent" id="man">
                <p>
                   「SHEK LEUNG」為Samson畢業後在倫敦創立的品牌。 SHEK LEUNG 重視的不只是設計師主觀的感受或是奪目的效果，而是透過作品與觀賞者溝通，觸動人心。SHEK LEUNG
                   以流動影像為媒介，將抽像的情感和個人的經歷呈現在品牌的設計上。這些設計不僅載有設計師精緻的手工藝，而且還有精心鋪排的瑕疵 － 好比在現實中，真正的美麗其實也就蘊藏於不完美之中。
-                  <br>
+                  <br><br>
                   SHEK LEUNG 的作品並不建於傳統的性別框框內。大膽的裁剪與細膩的手工讓我們都能坦白地面對自己內心的脆弱和情感。
-                  <br>
-                  <br>
+                  <br></p>
+               <br>
+               <p>
                   梁碩仁（Samson Shek Yen
                   Leung）生於台灣，長於香港，2018年及2020年分別於英國中央聖馬丁藝術學院以一等榮譽完成女裝服裝設計文學士及碩士。Samson的學士及碩士畢業作品均被選中於CSM畢業作品發佈會及2020年倫敦時裝週上展出。
-                  <br>
+                  <br><br>
                   Samson曾為多個國際著名的時裝品牌工作，包括紐約的Proenza Schouler； 倫敦的Craig Green和Aitor Throup； 東京的Taro Horiuchi和Written
                   Afterwards。
                </p>
@@ -404,33 +407,32 @@
                <li><a href="#">Instagram</a></li>
             </ul>
          </div>
-      </div>
+         <div class="stockist">
+            <button class="stockistbtn">Stockist</button>
+            <ul class="stockist-content">
+               <li>
+                  <p>SHOP EXAMPLE</p>
+               </li>
+               <li>
+                  <p>SHOP EXAMPLE </p>
+               </li>
+               <li>
+                  <p>SHOP EXAMPLE</p>
+               </li>
+               <li>
+                  <p>SHOP EXAMPLE</p>
+               </li>
 
-      <div class="collection-container">
-         <div class="bg-col">
+            </ul>
+         </div>
+         <div class="about-img">
 
          </div>
       </div>
 
-      <div class="projects-container">
-         <div class="bg-col">
-
-         </div>
-      </div>
-      <script src="main.js"></script>
+   </div>
+   <script defer src="main.js"></script>
    </div>
 </body>
 
 </html>
-
-<!-- <div class="gradient-svg">
- 
-        <svg version="1.1" id="oval" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 991 677" style="enable-background:new 200 500 991 677;" xml:space="preserve">
-        <path id="oval-outline" d="M794.4,55.9c0,0-278.5-139.3-573.5,22.2l0-0.2c0,0-212.7,74.6-220.6,253.5
-        c-7.8,176.3,214,282.5,220.7,285.6v0.4c0,0,289.9,144.5,584.9-17.1l0-0.1c40.1-20.6,179-102.8,185-256.8
-        C997.8,163.4,794.4,55.9,794.4,55.9z M221,372.5c0.1,0,0.2-0.1,0.3-0.1C221.2,372.5,221.1,372.6,221,372.5L221,372.5z M458.4,427.8
-        c-24.1-17.7-50.6-99.1-110-102.4c-4.9-0.3-9.8-0.2-14.7,0.2c95.8-38.7,220-85.6,234.6-74.9c24.1,17.7,50.6,99.1,110,102.4
-        c6.7,0.4,13.5,0.1,20.4-0.8C602.5,390.6,473.3,438.8,458.4,427.8z"/>
-        </svg>
-        </div> -->
