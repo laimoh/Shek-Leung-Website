@@ -16,7 +16,5 @@
     "url": "https://github.com/laimoh/Shek-Leung-Website/issues"
   },
   "homepage": "https://github.com/laimoh/Shek-Leung-Website#readme",
-  "dependencies": {
-    "swup": "^2.0.11"
-  }
+  "dependencies": {}
 }

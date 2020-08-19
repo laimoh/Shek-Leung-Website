@@ -1,6 +1,4 @@
-
-
-var swup = new Swup();
+// const swup = new Swup();
 
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
@@ -10,12 +8,10 @@ let projbtn = document.getElementById('projbtn');
 
 let pressOpen = false;
 let aboutOpen = false;
-let colOpen = false;
 let projOpen = false;
 
 pressbtn.addEventListener('click', enablePress);
 aboutbtn.addEventListener('click', enableAbout);
-colbtn.addEventListener('click', enableCol);
 projbtn.addEventListener('click', enableProj);
 
 
@@ -35,13 +31,6 @@ function enableAbout() {
    }
 }
 
-function enableCol() {
-   if (colOpen === false) {
-      openCol();
-   } else {
-      closeCol();
-   }
-}
 
 function enableProj() {
    if (projOpen === false) {
@@ -73,16 +62,6 @@ function closeAbout() {
    aboutOpen = false;
 }
 
-function openCol() {
-
-   container.classList.add('openCollection');
-   colOpen = true;
-}
-
-function closeCol() {
-   container.classList.remove('openCollection')
-   colOpen = false;
-}
 
 function openProj() {
 
@@ -95,13 +74,6 @@ function closeProj() {
    projOpen = false;
 }
 
-const el = document.querySelector(".bg-home");
-
-el.addEventListener("mousemove", (e) => {
-   el.style.backgroundPositionX = -e.offsetX + "px";
-   el.style.backgroundPositionY = -e.offsetY + "px";
-});
-
 
 //  language button toggle
 
@@ -112,6 +84,6 @@ const langbtn = document.querySelector('.langChange');
 
 langbtn.addEventListener('click', function () {
    engBox.classList.toggle('transparent');
-   console.log(engBox.classList);
    manBox.classList.toggle('transparent');
 });
+
