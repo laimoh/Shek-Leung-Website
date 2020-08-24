@@ -16,5 +16,8 @@
     "url": "https://github.com/laimoh/Shek-Leung-Website/issues"
   },
   "homepage": "https://github.com/laimoh/Shek-Leung-Website#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "gsap": "^3.5.0"
+  }
 }

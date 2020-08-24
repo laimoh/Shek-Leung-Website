@@ -584,11 +584,6 @@ body {
 /* collections page */
 
 
-.main-info {
-   background-color: transparent;
-   height: 100vh;
-}
-
 .col {
    overflow-y: hidden;
 }
@@ -956,6 +951,21 @@ button:hover {
    height: 700px;
 }
 
+.capsule-wrapper {
+   width: 100vw;
+   height: 100vh;
+   background: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.capsule-wrapper h1 {
+   color: white;
+   font-family: Helvetica, sans-serif;
+   font-weight: bold;
+   text-transform: uppercase;
+}
 
 /* projects container */
 .projects-container {

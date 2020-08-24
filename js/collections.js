@@ -1,3 +1,25 @@
+// page transitions
+// window.addEventListener('load', () => {
+//    Barba.Pjax.start();
+// })
+
+// barba.init({
+//    transitions: [{
+//      name: 'opacity-transition',
+//      leave(data) {
+//        return gsap.to(data.current.container, {
+//          opacity: 0
+//        });
+//      },
+//      enter(data) {
+//        return gsap.from(data.next.container, {
+//          opacity: 0
+//        });
+//      }
+//    }]
+//  });
+
+
 // collections page tabs toggle
 
 const tabs = document.querySelectorAll('[data-tab-target]');
