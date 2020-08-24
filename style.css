@@ -575,7 +575,7 @@ body {
    left: 0;
    width: 40vw;
    height: 100vh;
-   background: url("72ppi/SHEKYENLEUNG_PORTRAIT_150DPI.jpg");
+   background: url("./Home/SHEKYENLEUNG_PORTRAIT_150DPI.jpg");
    background-size: 100% 100%;
    z-index: -10;
 
@@ -752,8 +752,14 @@ body {
 }
 
 #catwalk {
-   width: 100% !important;
-   height: auto !important;
+   object-fit: cover;
+   width: 100vw;
+   height: 100vh;
+   /* position: fixed; */
+   top: 0;
+   left: 0;
+   /* width: 100% !important;
+   height: auto !important; */
 }
 
 #about {
@@ -959,7 +965,7 @@ button:hover {
    position: absolute;
    left: 0;
    top: 100vh;
-   background: url('72ppi/Asset\ 3.png');
+   background: url('Home/Asset\ 3.png');
    background-size: 100% 100%;
 }
 
