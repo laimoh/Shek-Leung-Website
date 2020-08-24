@@ -1,4 +1,3 @@
-// const swup = new Swup();
 
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
