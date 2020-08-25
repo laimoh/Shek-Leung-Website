@@ -4,6 +4,8 @@ let pressbtn = document.getElementById('pressbtn');
 let aboutbtn = document.getElementById('aboutbtn');
 let colbtn = document.getElementById('colbtn');
 let projbtn = document.getElementById('projbtn');
+let mail = document.getElementById('mail');
+let ig = document.getElementById('ig');
 
 let pressOpen = false;
 let aboutOpen = false;
@@ -12,7 +14,19 @@ let projOpen = false;
 pressbtn.addEventListener('click', enablePress);
 aboutbtn.addEventListener('click', enableAbout);
 projbtn.addEventListener('click', enableProj);
+// colbtn.addEventListener('click', animateUp);
+mail.addEventListener('click', redirectMail);
 
+$('.colbtn').click(function(e) {
+   e.preventDefault();
+   var linkUrl = $(this).attr('href');
+   animateUp();
+   setTimeout(function(url) { window.location.replace = url; }, 6000, linkUrl);
+ });
+
+function redirectMail() {
+   window.location.href = "mailto:hello@shekleung.com";
+}
 
 function enablePress() {
    if (pressOpen === false) {
@@ -73,6 +87,9 @@ function closeProj() {
    projOpen = false;
 }
 
+function animateUp() {
+   homeContainer.classList.add('animate__animated animate__fadeOutDown');
+}
 
 //  language button toggle
 

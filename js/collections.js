@@ -1,23 +1,4 @@
-// page transitions
-// window.addEventListener('load', () => {
-//    Barba.Pjax.start();
-// })
-
-// barba.init({
-//    transitions: [{
-//      name: 'opacity-transition',
-//      leave(data) {
-//        return gsap.to(data.current.container, {
-//          opacity: 0
-//        });
-//      },
-//      enter(data) {
-//        return gsap.from(data.next.container, {
-//          opacity: 0
-//        });
-//      }
-//    }]
-//  });
+// 
 
 
 // collections page tabs toggle
@@ -96,24 +77,32 @@ faders.forEach(fader => {
 
 
 // video control
-audiobtn.addEventListener('click', () => {
-   if (vid.muted === false) {
-      vid.muted = true;
-   } else {
-      vid.muted = false;
-   }
-})
+if (!audiobtn) {
 
-playbtn.addEventListener('click', () => {
-   if (vid.paused) {
-      playbtn.innerHTML = "&#9612; &#9612;"
-      vid.play();
-   } else {
-      playbtn.innerHTML = "▶";
-      vid.pause();
+} else {
+   audiobtn.addEventListener('click', () => {
+      if (vid.muted === false) {
+         vid.muted = true;
+      } else {
+         vid.muted = false;
+      }
+   })
+}
 
-   }
-})
+if (!playbtn) {
+
+} else {
+   playbtn.addEventListener('click', () => {
+      if (vid.paused) {
+         playbtn.innerHTML = "&#9612; &#9612;"
+         vid.play();
+      } else {
+         playbtn.innerHTML = "▶";
+         vid.pause();
+
+      }
+   })
+}
 //  lookbook slider
 
 const slider = document.querySelector('.slider');

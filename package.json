@@ -18,6 +18,7 @@
   "homepage": "https://github.com/laimoh/Shek-Leung-Website#readme",
   "dependencies": {
     "@dogstudio/highway": "^2.2.1",
-    "gsap": "^3.5.0"
+    "gsap": "^3.5.0",
+    "swup": "^2.0.11"
   }
 }
