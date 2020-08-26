@@ -198,6 +198,7 @@ body {
 #projbtn {
    align-self: flex-end;
    cursor: pointer;
+   /* padding-left: -3rem; */
 }
 
 /* press page */
@@ -813,7 +814,7 @@ html.is-animating .transition-animate_content {
 }
 
 #researchFilm p {
-   font-size: 1rem;
+   font-size: 0.7rem;
    font-family: Helvetica, sans-serif;
    font-style: italic;
    margin-bottom: 1rem;
@@ -870,7 +871,7 @@ html.is-animating .transition-animate_content {
 
 .credit-text p {
    font-family: Helvetica, sans-serif;
-   font-size: 1.1rem;
+   font-size: 1rem !important;
    font-weight: bold;
    line-height: 1.2;
    font-style: normal !important;
@@ -925,7 +926,7 @@ html.is-animating .transition-animate_content {
 }
 
 .still-wrapper {
-   width: 65vw;
+   width: 70vw;
    height: 100vh;
    overflow: hidden;
 }
