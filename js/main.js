@@ -1,11 +1,12 @@
-
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
 let aboutbtn = document.getElementById('aboutbtn');
-let colbtn = document.getElementById('colbtn');
+
 let projbtn = document.getElementById('projbtn');
 let mail = document.getElementById('mail');
 let ig = document.getElementById('ig');
+const colbtn = document.getElementById('colbtn');
+const homeContainer = document.getElementById('homeContainer');
 
 let pressOpen = false;
 let aboutOpen = false;
@@ -14,15 +15,20 @@ let projOpen = false;
 pressbtn.addEventListener('click', enablePress);
 aboutbtn.addEventListener('click', enableAbout);
 projbtn.addEventListener('click', enableProj);
-// colbtn.addEventListener('click', animateUp);
+colbtn.addEventListener('click', animateDown);
 mail.addEventListener('click', redirectMail);
 
-$('.colbtn').click(function(e) {
+function animateDown(e) {
    e.preventDefault();
-   var linkUrl = $(this).attr('href');
-   animateUp();
-   setTimeout(function(url) { window.location.replace = url; }, 6000, linkUrl);
- });
+   homeContainer.classList.add('animate__animated', 'animate__fadeOutDown');
+   if (this.href) {
+      var target = this.href;
+   }
+   setTimeout(function () {
+      window.location.replace(target);
+   }, 1000);
+
+}
 
 function redirectMail() {
    window.location.href = "mailto:hello@shekleung.com";
@@ -102,4 +108,3 @@ langbtn.addEventListener('click', function () {
    engBox.classList.toggle('transparent');
    manBox.classList.toggle('transparent');
 });
-
