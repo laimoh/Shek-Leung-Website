@@ -14,7 +14,7 @@
 
 <body class="animate__animated animate__fadeIn">
    <div id="container" class="container">
-      <div id="homeContainer" class="home-container">
+      <section id="homeContainer" class="home-container">
          <div class="bg-home bg-move">
             <img src="/Home/Asset 3.png" alt="film">
          </div>
@@ -27,9 +27,9 @@
             <a href="/collections/MA/MA.html" class="text-fade" id="colbtn">COLLECTIONS</a>
             <p id="projbtn">PROJECTS</p>
          </div>
-      </div>
+      </section>
 
-      <div class="press-container">
+      <section class="press-container">
          <div class="img-grid">
             <div class="press-info">
                <div class="card">
@@ -358,10 +358,9 @@
                <li><a id="ig" href="https://www.instagram.com/samsonleung/?hl=en" target="_blank">Instagram</a></li>
             </ul>
          </div>
+      </section>
 
-      </div>
-
-      <div class="about-container">
+      <section class="about-container">
          <div class="textSection">
 
             <div class="eng about" id="eng">
@@ -430,7 +429,90 @@
          <div class="about-img">
 
          </div>
-      </div>
+      </section>
+
+      <section class="projects-container">
+         <nav>
+            <a href="#archiveFilms" class="archiveFilms active-proj">Archive Films</a>
+            <a href="#soundDY" class="dearYou">Sound: Dear You</a>
+            <a href="#soundDS" class="directorSt">Sound: Final Director's Statement </a>
+         </nav>
+
+         <main>
+            <div id="archiveFilms">
+               <div class="carousel">
+                  <p class="carousel__slide-text">BLUE → Research Film (2015)</p>
+                  <span class="play">▶</span>
+                  <span class="audio">♩</span>
+                  <button class="carousel__button carousel__button--left">←</button>
+                  <div class="carousel__track-container">
+                     <ul class="carousel__track">
+                        <li class="carousel__slide current-slide">
+
+                           <video class="carousel__video" id="blue"
+                              src="/Home/projects/B L U E - Research Film (2015).mp4" video
+                              preload="metadata"></video>
+                        </li>
+                        <li class="carousel__slide">
+
+                           <video id="lvproj" class="carousel__video"
+                              src="/Home/projects/LV Project_ Hologram Presentation (2016).mp4" video
+                              preload="metadata"></video>
+                        </li>
+                        <li class="carousel__slide">
+
+                           <video id="walking" class="carousel__video" src="/Home/projects/We create Paths by Walking (2016).mp4"
+                               video preload="metadata"></video>
+                        </li>
+                     </ul>
+                  </div>
+                  <button class="carousel__button carousel__button--right">→</button>
+               </div>
+
+            </div>
+            <div id="soundDY">
+               <div class="container__sound">
+                  <div class="container__audio">
+                     <p class="container__header">"Dear You" Sound (2018)</p>
+                     <audio controls>
+                        <source src="/Home/projects/Dear You (2018).mp3" type="audio/mp3">
+                     </audio>
+                  </div>
+                  <div class="container__credit">
+                     <p>Collaboration for BA Collection→<br><br>
+                        Concept by Samson Leung<br>
+                        Music composed by Zacharias Wolfe<br>
+                        <br>Performed by the following:
+                        <br><br>Alto Saxophone solo - Theo Hillborg
+                        <br>Violins - Abel Puustinen, Pierpaolo Casamassima, Claire Edwards,
+                        Elisabeth Turmo, Ismael Jarmouni Gómez & Esther Park
+                        <br>Viola - Georgie Davis & Tiffany Cheng
+                        <br>Cello - Shizuku Tatsuno & Meera Priyanka Raja
+                        <br>Bass - Peter Farthing
+                        <br>Studio engineer and mix - Luke Knott
+                        <br>Final mix and editing - Oliver Buckland</p>
+                  </div>
+               </div>
+            </div>
+            <div id="soundDS">
+               <div class="container__sound">
+                  <div class="container__audio">
+                     <p class="container__header">“Final Director Statement” Sound (2020)
+                     </p>
+                     <audio controls>
+                        <source src="/Home/projects/Final Director's Statement (2020).mp3" type="audio/mp3">
+                     </audio>
+                  </div>
+                  <div class="container__credit">
+                     <p>Collaboration for MA Collection→<br><br>
+                        Concept by Samson Leung<br>
+                        Music composed by Zacharias Wolfe<br>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </section>
 
    </div>
    <script defer src="/js/main.js"></script>

@@ -1,12 +1,13 @@
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
 let aboutbtn = document.getElementById('aboutbtn');
-
 let projbtn = document.getElementById('projbtn');
 let mail = document.getElementById('mail');
 let ig = document.getElementById('ig');
 const colbtn = document.getElementById('colbtn');
 const homeContainer = document.getElementById('homeContainer');
+
+const navVertical = document.querySelector('.nav-button-v');
 
 let pressOpen = false;
 let aboutOpen = false;
@@ -29,6 +30,7 @@ function animateDown(e) {
    }, 1000);
 
 }
+
 
 function redirectMail() {
    window.location.href = "mailto:hello@shekleung.com";
@@ -54,6 +56,7 @@ function enableAbout() {
 function enableProj() {
    if (projOpen === false) {
       openProj();
+      navVertical.classList.toggle('project-header')
    } else {
       closeProj();
    }
@@ -90,12 +93,10 @@ function openProj() {
 
 function closeProj() {
    container.classList.remove('openProjects')
+   navVertical.classList.toggle('project-header');
    projOpen = false;
 }
 
-function animateUp() {
-   homeContainer.classList.add('animate__animated animate__fadeOutDown');
-}
 
 //  language button toggle
 
@@ -108,3 +109,178 @@ langbtn.addEventListener('click', function () {
    engBox.classList.toggle('transparent');
    manBox.classList.toggle('transparent');
 });
+
+// const tabs = document.querySelectorAll('[proj-tab-target]');
+// const links = document.getElementsByClassName('tab-p');
+// const tabContents = document.querySelectorAll('[proj-tab-content]')
+
+// // loop through the list to find the one tab mouse clicked
+// tabs.forEach(tab => {
+//    tab.addEventListener('click', () => {
+//       const target = document.querySelector(tab.dataset.tabTarget);
+//       tabContents.forEach(tabContent => {
+//          tabContent.classList.remove('active')
+//       })
+//       target.classList.add('.active')
+
+//       tabs.forEach(tab => {
+//          tab.classList.remove('active')
+//       });
+//       tab.classList.add('active')
+//    });
+// });
+
+const projTabs = document.querySelectorAll('nav a');
+const directorSt = document.querySelector('.directorSt');
+const dearYou = document.querySelector('.dearYou');
+const archiveFilms = document.querySelector('.archiveFilms')
+
+
+archiveFilms.addEventListener('click', () => {
+   projTabs.forEach(tab => {
+      tab.classList.remove('active-proj');
+      archiveFilms.classList.add('active-proj')
+   })
+})
+
+dearYou.addEventListener('click', () => {
+   projTabs.forEach(tab => {
+      tab.classList.remove('active-proj');
+      dearYou.classList.add('active-proj')
+   })
+})
+
+directorSt.addEventListener('click', () => {
+   projTabs.forEach(tab => {
+      tab.classList.remove('active-proj');
+      directorSt.classList.add('active-proj')
+   })
+})
+
+const track = document.querySelector('.carousel__track'); //ul tag
+const slides = Array.from(track.children); //li tags
+const nextBtn = document.querySelector('.carousel__button--right')
+const prevBtn = document.querySelector('.carousel__button--left');
+const slideWidth = slides[0].getBoundingClientRect().width;
+const videoText = document.querySelector(".carousel__slide-text");
+const carouselVideos = document.querySelectorAll('.carousel__video');
+
+const setSlidePosition = (slide, index) => {
+   slide.style.left = slideWidth * index + "px";
+}
+slides.forEach(setSlidePosition);
+
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+   currentSlide.classList.remove('current-slide');
+   targetSlide.classList.add('current-slide');
+   if (targetSlide === slides[1]) {
+      videoText.innerHTML = "LV Project → Hologram Presentation (2016) ";
+
+   } else if (targetSlide === slides[2]) {
+      videoText.innerHTML = "We Create Paths By Walking (2016)";
+
+   } else if (targetSlide === slides[0]) {
+      videoText.innerHTML = "BLUE → Research Film (2015)";
+
+   }
+}
+
+prevBtn.addEventListener('click', e => {
+   const currentSlide = track.querySelector('.current-slide');
+   const prevSlide = currentSlide.previousElementSibling;
+   moveToSlide(track, currentSlide, prevSlide);
+
+})
+
+nextBtn.addEventListener('click', e => {
+   // how much to move one slide?
+   const currentSlide = track.querySelector('.current-slide');
+   const nextSlide = currentSlide.nextElementSibling;
+   moveToSlide(track, currentSlide, nextSlide);
+})
+
+const blue = document.querySelector('#blue');
+const lvProj = document.querySelector('#lvproj');
+const walking = document.querySelector('#walking');
+const audio = document.querySelector('.carousel .audio');
+const play = document.querySelector('.play');
+
+
+if (!play) {
+
+} else {
+   play.addEventListener('click', () => {
+
+      if (slides[0].classList.contains('current-slide')) {
+         symbolSwitch(blue)
+
+      } else if (slides[1].classList.contains('current-slide')) {
+         symbolSwitch(lvProj)
+      } else if (slides[2].classList.contains('current-slide')) {
+         symbolSwitch(walking)
+      }
+   })
+}
+
+function symbolSwitch(element) {
+
+   if (element.paused) {
+      element.play();
+      play.innerHTML = "||"
+   } else {
+      element.pause();
+      play.innerHTML = "▶";
+
+   }
+}
+
+if (!audio) {
+
+} else {
+   audio.addEventListener('click', () => {
+
+      if (slides[0].classList.contains('current-slide')) {
+         symbolBlink(blue)
+
+      } else if (slides[1].classList.contains('current-slide')) {
+         symbolBlink(lvProj)
+      } else if (slides[2].classList.contains('current-slide')) {
+         symbolBlink(walking)
+      }
+   })
+}
+
+function symbolBlink(element) {
+   if (element.muted === false) {
+      element.muted = true;
+      audio.classList.remove('blinking');
+   } else {
+      element.muted = false;
+      audio.classList.add('blinking');
+   }
+}
+
+
+// const carouselVideos = document.querySelectorAll('.carousel__video');
+
+
+// console.log(carouselVideos);
+
+// if (!play) {
+
+// } else {
+//    play.addEventListener('click', () => {
+//       carouselVideos.forEach(e => {
+//          if (e.paused) {
+//             play.innerHTML = "&#9612; &#9612;"
+//             e.play();
+//          } else {
+//             play.innerHTML = "▶";
+//             e.pause();
+
+//          }
+//       })
+//    })
+// }
