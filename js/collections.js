@@ -16,9 +16,9 @@ tabs.forEach(tab => {
    tab.addEventListener('click', () => {
       const target = document.querySelector(tab.dataset.tabTarget)
 
-      tabContents.forEach(tabContent => {
-         tabContent.classList.remove('active')
-      })
+      // tabContents.forEach(tabContent => {
+      //    tabContent.classList.remove('active')
+      // })
       tabs.forEach(tab => {
          tab.classList.remove('active')
       });
@@ -38,18 +38,20 @@ const colorOptions = {
    threshold: 0, // between zero and one  - how much of the elemtn should in viewport for object to fire an event(1 is 100%)
    rootMargin: "-150px" // margin between firing
 };
-
-
 const colorObserver = new IntersectionObserver(function (entries, colorObserver) {
    entries.forEach(entry => {
       if (!entry.isIntersecting) {
-         document.querySelectorAll('a').forEach(e => e.style.color = "var(--grCol3");
+         document.querySelectorAll(".nav-bar a").forEach(e => e.style.color = "var(--grCol3");
+         document.querySelectorAll(".info a").forEach(e => e.style.color = "var(--grCol3");
          audiobtn.style.display = "block";
       } else {
-         document.querySelectorAll('a').forEach(e => e.style.color = "black");
+         document.querySelectorAll(".nav-bar a").forEach(e => e.style.color = "black");
+         document.querySelector(".active").style.color = "var(--grCol3)";
+         document.querySelectorAll(".info a").forEach(e => e.style.color = "black");
       }
    })
 }, colorOptions);
+
 
 colorElements.forEach(element => {
    colorObserver.observe(element);
@@ -144,3 +146,12 @@ slider.addEventListener('transitionend', () => {
       slider.style.transform = 'translateX(' + (-size * counter) + 'px)'
    }
 })
+
+function getURL() {
+   let w = (window.location.href);
+   if (w.includes('MA.html')) {
+      
+   };
+}
+
+getURL()

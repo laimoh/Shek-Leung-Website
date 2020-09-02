@@ -6,18 +6,27 @@ let mail = document.getElementById('mail');
 let ig = document.getElementById('ig');
 const colbtn = document.getElementById('colbtn');
 const homeContainer = document.getElementById('homeContainer');
-
-const navVertical = document.querySelector('.nav-button-v');
+// const backbtn = document.querySelector('.proj__back'); 
 
 let pressOpen = false;
 let aboutOpen = false;
-let projOpen = false;
 
-pressbtn.addEventListener('click', enablePress);
-aboutbtn.addEventListener('click', enableAbout);
-projbtn.addEventListener('click', enableProj);
-colbtn.addEventListener('click', animateDown);
-mail.addEventListener('click', redirectMail);
+if (!pressbtn) {} else {
+   pressbtn.addEventListener('click', enablePress);
+}
+if (!aboutbtn) {} else {
+   aboutbtn.addEventListener('click', enableAbout);
+}
+if (!projbtn) {} else {
+   projbtn.addEventListener('click', animateUp);
+}
+if (!colbtn) {} else {
+   colbtn.addEventListener('click', animateDown);
+}
+if (!mail) {} else {
+   mail.addEventListener('click', redirectMail);
+}
+
 
 function animateDown(e) {
    e.preventDefault();
@@ -31,6 +40,17 @@ function animateDown(e) {
 
 }
 
+function animateUp(e) {
+   e.preventDefault();
+   homeContainer.classList.add('animate__animated', 'animate__fadeOutUp');
+   if (this.href) {
+      var target = this.href;
+   }
+   setTimeout(function () {
+      window.location.replace(target);
+   }, 1000);
+
+}
 
 function redirectMail() {
    window.location.href = "mailto:hello@shekleung.com";
@@ -49,16 +69,6 @@ function enableAbout() {
       openAbout();
    } else {
       closeAbout();
-   }
-}
-
-
-function enableProj() {
-   if (projOpen === false) {
-      openProj();
-      navVertical.classList.toggle('project-header')
-   } else {
-      closeProj();
    }
 }
 
@@ -85,50 +95,18 @@ function closeAbout() {
 }
 
 
-function openProj() {
-
-   container.classList.add('openProjects');
-   projOpen = true;
-}
-
-function closeProj() {
-   container.classList.remove('openProjects')
-   navVertical.classList.toggle('project-header');
-   projOpen = false;
-}
-
-
 //  language button toggle
 
 const engBox = document.getElementById('eng');
 const manBox = document.getElementById('man');
 const langbtn = document.querySelector('.langChange');
 
-
-langbtn.addEventListener('click', function () {
-   engBox.classList.toggle('transparent');
-   manBox.classList.toggle('transparent');
-});
-
-// const tabs = document.querySelectorAll('[proj-tab-target]');
-// const links = document.getElementsByClassName('tab-p');
-// const tabContents = document.querySelectorAll('[proj-tab-content]')
-
-// // loop through the list to find the one tab mouse clicked
-// tabs.forEach(tab => {
-//    tab.addEventListener('click', () => {
-//       const target = document.querySelector(tab.dataset.tabTarget);
-//       tabContents.forEach(tabContent => {
-//          tabContent.classList.remove('active')
-//       })
-//       target.classList.add('.active')
-
-//       tabs.forEach(tab => {
-//          tab.classList.remove('active')
-//       });
-//       tab.classList.add('active')
-//    });
-// });
+if (!langbtn) {} else {
+   langbtn.addEventListener('click', function () {
+      engBox.classList.toggle('transparent');
+      manBox.classList.toggle('transparent');
+   });
+}
 
 const projTabs = document.querySelectorAll('nav a');
 const directorSt = document.querySelector('.directorSt');
@@ -204,7 +182,7 @@ nextBtn.addEventListener('click', e => {
 const blue = document.querySelector('#blue');
 const lvProj = document.querySelector('#lvproj');
 const walking = document.querySelector('#walking');
-const audio = document.querySelector('.carousel .audio');
+const audio = document.querySelector('.vid-nav .audio');
 const play = document.querySelector('.play');
 
 
@@ -228,10 +206,12 @@ function symbolSwitch(element) {
 
    if (element.paused) {
       element.play();
+      audio.classList.toggle('blinking');
       play.innerHTML = "||"
    } else {
       element.pause();
       play.innerHTML = "▶";
+      audio.classList.toggle('blinking');
 
    }
 }
@@ -255,32 +235,9 @@ if (!audio) {
 function symbolBlink(element) {
    if (element.muted === false) {
       element.muted = true;
-      audio.classList.remove('blinking');
+      audio.classList.toggle('blinking');
    } else {
       element.muted = false;
-      audio.classList.add('blinking');
+      audio.classList.toggle('blinking');
    }
 }
-
-
-// const carouselVideos = document.querySelectorAll('.carousel__video');
-
-
-// console.log(carouselVideos);
-
-// if (!play) {
-
-// } else {
-//    play.addEventListener('click', () => {
-//       carouselVideos.forEach(e => {
-//          if (e.paused) {
-//             play.innerHTML = "&#9612; &#9612;"
-//             e.play();
-//          } else {
-//             play.innerHTML = "▶";
-//             e.pause();
-
-//          }
-//       })
-//    })
-// }
