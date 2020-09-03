@@ -12,17 +12,16 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 
-<body data-barba="wrapper" class="col">
+<body class="col">
 
    <div class="control">
-
       <p id="pause">&#9612; &#9612;</p>
       <p id="audio">♩</p>
    </div>
    <nav class="nav-container">
       <div class="nav-bar">
 
-         <a href="#show" data-tab-target="#show" class="tab">Show</a>
+         <a href="#show" data-tab-target="#show" class="tab active">Show</a>
          <a href="#about" data-tab-target="#about" class="tab">About</a>
          <a href="#researchFilm" data-tab-target="#researchFilm" class="tab">Research Films</a>
          <a href="#stills" data-tab-target="#stills" class="tab">Stills</a>
@@ -31,18 +30,18 @@
       </div>
       <div class="info overlay">
          <div class="text">
-            <a id="mabtn" href="/collections/MA/MA.html">MA</a>
-            <a id="capbtn" href="/collections/capsule.html">Capsule</a>
-            <a id="babtn" href="/collections/BA/BA.html">BA</a>
+            <a class="mabtn" href="/collections/MA/MA.html">MA</a>
+            <a class="capbtn" href="/collections/capsule.html">Capsule</a>
+            <a class="babtn user-border" href="/collections/BA/BA.html">BA</a>
          </div>
          <a href="../../index.html" class="info-back">Back</a>
       </div>
    </nav>
    <main>
       <div class="tab-content animate__animated animate__fadeIn">
-         <div id="show" data-tab-content class="active">
+         <div id="show" data-tab-content>
             <div class="video-wrapper">
-               <video id="catwalk" playsinline autoplay loop muted preload="metadata">
+               <video id="catwalk" playsinline autoplay muted loop preload="metadata">
                   <source src="Samson Leung Dear you, he said - CSM BA Fashion.mp4" type="video/mp4">
                </video>
             </div>
