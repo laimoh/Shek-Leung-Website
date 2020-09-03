@@ -6,7 +6,6 @@ let mail = document.getElementById('mail');
 let ig = document.getElementById('ig');
 const colbtn = document.getElementById('colbtn');
 const homeContainer = document.getElementById('homeContainer');
-// const backbtn = document.querySelector('.proj__back'); 
 
 let pressOpen = false;
 let aboutOpen = false;

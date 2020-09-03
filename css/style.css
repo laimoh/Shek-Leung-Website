@@ -590,19 +590,19 @@ body {
 
 @keyframes fade-about {
    0% {
-      background-image: url("Home/updated\ portrait_150dpi.jpg")
+      background-image: url("/img/Home/updated\ portrait_150dpi.jpg")
    }
    25% {
-      background-image: url("Home/tag\ 150dpi.jpg")
+      background-image: url("/img/Home/tag\ 150dpi.jpg")
    }
    50% {
-      background-image: url("Home/updated\ portrait_150dpi.jpg")
+      background-image: url("/img/Home/updated\ portrait_150dpi.jpg")
    }
    75% {
-      background-image: url("Home/CARE\ LABEL\ 150DPI.jpg")
+      background-image: url("/img/Home/CARE\ LABEL\ 150DPI.jpg")
    }
    100% {
-      background-image: url("Home/updated\ portrait_150dpi.jpg")
+      background-image: url("/img/Home/updated\ portrait_150dpi.jpg")
    }
 
 }
@@ -613,7 +613,7 @@ body {
    display: flex; 
    flex-direction: column;
    align-items: center;
-   justify-content: flex-star;
+   justify-content: flex-start;
    scroll-behavior: smooth;
    overflow: hidden;
 }

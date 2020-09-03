@@ -7,7 +7,7 @@ const vid = document.getElementById("catwalk");
 
 const show = document.getElementById('show');
 const about = document.getElementById('about');
-const  researchFilm = document.getElementById('researchFilm');
+const researchFilm = document.getElementById('researchFilm');
 const stills = document.getElementById('stills');
 const lookbook = document.getElementById('lookbook');
 
