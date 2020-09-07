@@ -10,7 +10,8 @@ const about = document.getElementById('about');
 const researchFilm = document.getElementById('researchFilm');
 const stills = document.getElementById('stills');
 const lookbook = document.getElementById('lookbook');
-
+const inactiveTabs = document.querySelectorAll(".nav-bar > a:not(.active)") 
+const collectionLinks = document.querySelectorAll(".info a")
 // content fade in
 
 const colorElements = document.querySelectorAll('.black-text');
@@ -24,14 +25,17 @@ const colorOptions = {
 const colorObserver = new IntersectionObserver(function (entries, colorObserver) {
    entries.forEach(entry => {
       if (!entry.isIntersecting) {
-         document.querySelectorAll(".nav-bar a").forEach(e => e.style.color = "var(--grCol3");
-         document.querySelectorAll(".info a").forEach(e => e.style.color = "var(--grCol3");
+         inactiveTabs.forEach(e => e.classList.remove('black-links'))
+         collectionLinks.forEach(e => e.classList.remove('black-links'));
+         inactiveTabs.forEach(e => e.classList.add('white-links'))
+         collectionLinks.forEach(e => e.classList.add('white-links'));
          document.querySelector('.user-border').style.borderColor = "white";
          audiobtn.style.display = "block";
       } else {
-         document.querySelectorAll(".nav-bar a").forEach(e => e.style.color = "black");
-         document.querySelector(".active").style.color = "var(--grCol3)";
-         document.querySelectorAll(".info a").forEach(e => e.style.color = "black");
+         inactiveTabs.forEach(e => e.classList.remove('white-links'))
+         collectionLinks.forEach(e => e.classList.remove('white-links'));
+         inactiveTabs.forEach(e => e.classList.add('black-links'))
+         collectionLinks.forEach(e => e.classList.add('black-links'));
          document.querySelector('.user-border').style.borderColor = "black";
       }
    })

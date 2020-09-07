@@ -1,3 +1,5 @@
+
+
 let container = document.getElementById('container');
 let pressbtn = document.getElementById('pressbtn');
 let aboutbtn = document.getElementById('aboutbtn');
@@ -6,6 +8,8 @@ let mail = document.getElementById('mail');
 let ig = document.getElementById('ig');
 const colbtn = document.getElementById('colbtn');
 const homeContainer = document.getElementById('homeContainer');
+let contactbtn = document.querySelector('.contactbtn');
+let stockistbtn = document.querySelector('.stockistbtn');
 
 let pressOpen = false;
 let aboutOpen = false;
@@ -107,32 +111,52 @@ if (!langbtn) {} else {
    });
 }
 
+var current = 0,
+    aboutSlides = document.querySelectorAll(".crossfade img");
+
+setInterval(function() {
+  for (var i = 0; i < aboutSlides.length; i++) {
+    aboutSlides[i].style.opacity = 0;
+  }
+  current = (current != aboutSlides.length - 1) ? current + 1 : 0;
+  aboutSlides[current].style.opacity = 1;
+}, 5000);
+
+// projects page
+
+
 const projTabs = document.querySelectorAll('nav a');
 const directorSt = document.querySelector('.directorSt');
 const dearYou = document.querySelector('.dearYou');
 const archiveFilms = document.querySelector('.archiveFilms')
 
 
+if(!archiveFilms) {} else{
 archiveFilms.addEventListener('click', () => {
    projTabs.forEach(tab => {
       tab.classList.remove('active-proj');
       archiveFilms.classList.add('active-proj')
    })
 })
+}
 
+if(!dearYou) {} else {
 dearYou.addEventListener('click', () => {
    projTabs.forEach(tab => {
       tab.classList.remove('active-proj');
       dearYou.classList.add('active-proj')
    })
 })
-
+}
+if(!directorSt) {} else {
 directorSt.addEventListener('click', () => {
    projTabs.forEach(tab => {
       tab.classList.remove('active-proj');
       directorSt.classList.add('active-proj')
    })
 })
+}
+
 
 const track = document.querySelector('.carousel__track'); //ul tag
 const slides = Array.from(track.children); //li tags
@@ -164,19 +188,23 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
    }
 }
 
+if (!prevBtn) {} else {
 prevBtn.addEventListener('click', e => {
    const currentSlide = track.querySelector('.current-slide');
    const prevSlide = currentSlide.previousElementSibling;
    moveToSlide(track, currentSlide, prevSlide);
 
 })
+}
 
+if (!nextBtn) {} else {
 nextBtn.addEventListener('click', e => {
    // how much to move one slide?
    const currentSlide = track.querySelector('.current-slide');
    const nextSlide = currentSlide.nextElementSibling;
    moveToSlide(track, currentSlide, nextSlide);
 })
+}
 
 const blue = document.querySelector('#blue');
 const lvProj = document.querySelector('#lvproj');
