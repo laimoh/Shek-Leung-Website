@@ -3,12 +3,18 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>SHEK LEUNG | MA</title>
    <link rel="stylesheet" href="/css/normalize.css">
-   <link rel="stylesheet" href="/css/style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+   <link rel="stylesheet" href="/css/style.css">
+   <link rel='stylesheet' media='only screen 
+   and (min-device-width: 375px) 
+   and (max-device-width: 812px) 
+   and (-webkit-min-device-pixel-ratio: 3)
+   and (orientation: portrait)' href='css/mobile.css'/>
+
 </head>
 
 <body class="col">
@@ -37,7 +43,7 @@
    <main>
       <div class="tab-content animate__animated animate__fadeIn">
 
-         <div id="show" data-tab-content class="active">
+         <div id="show" data-tab-content class="active active__mobile">
             <div class="video-wrapper">
                <video id="catwalk" playsinline autoplay loop preload="metadata">
                   <source src="/img/MA/SAMSON LEUNG MA COLLECTION AW20.mp4" type="video/mp4">
@@ -96,18 +102,19 @@
          </div>
 
 
-         <div id="researchFilm" class="black-text" data-tab-content style="width:120vw;">
+         <div id="researchFilm" class="black-text" data-tab-content>
             <div class="video-wrapper2 fade-in">
-                  <p>Mood Film : Final Director’s Statement</p>
+               <p>Mood Film : Final Director’s Statement</p>
                <video id="mood-ma" loop video controls poster="img/MA/mood-film-bg.png" preload="metadata">
                   <source src="/img/MA/mood-film-ma (1).mp4" type="video/mp4">
                </video>
             </div>
             <div class="credit">
-               <button class="credit-icon">☺</button>
+               <button class="credit-icon"> (...)
+               </button>
                <div class="credit-text">
                   <p>
-                     Thank you 
+                     Thank you
                      to my team of helpers
                      <br><br>
                      and the following
@@ -144,7 +151,7 @@
             </div>
          </div>
 
-         <div id="stills" data-tab-content style="width:260vw;">
+         <div id="stills" data-tab-content>
             <div class="stills">
                <div class="still-wrapper">
                   <img class="inner-img" loading="lazy" src="/img/MA/stills/1.jpg" alt="still 1">

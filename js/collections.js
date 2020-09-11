@@ -4,18 +4,46 @@ const tabContents = document.querySelectorAll('[data-tab-content]')
 const audiobtn = document.getElementById('audio');
 const playbtn = document.getElementById('pause');
 const vid = document.getElementById("catwalk");
-
 const show = document.getElementById('show');
 const about = document.getElementById('about');
 const researchFilm = document.getElementById('researchFilm');
 const stills = document.getElementById('stills');
+const researchFilmBa = document.getElementById('researchFilm-ba');
+const stillsBa = document.getElementById('stills-ba');
 const lookbook = document.getElementById('lookbook');
-const inactiveTabs = document.querySelectorAll(".nav-bar > a:not(.active)") 
+const inactiveTabs = document.querySelectorAll(".nav-bar > a:not(.active)")
 const collectionLinks = document.querySelectorAll(".info a")
 // content fade in
-
 const colorElements = document.querySelectorAll('.black-text');
 const faders = document.querySelectorAll('.fade-in');
+
+//  lookbook slider
+
+const slider = document.querySelector('.slider');
+const sliderImages = document.querySelectorAll('.slider img');
+
+//  buttons
+
+const leftbtn = document.querySelector('#left');
+const rightbtn = document.querySelector('#right');
+
+const morebtn = document.querySelector('.mobile__more');
+const processMenu = document.querySelector('.mobile__process-nav');
+
+if (window.matchMedia("(max-device-width: 850px)").matches) {
+   morebtn.addEventListener('click', () => {
+      processMenu.classList.toggle('fade');
+      let menuOpen = processMenu.classList.contains('fade');
+      if (!menuOpen) {
+         console.log(menuOpen)
+         processMenu.style.pointerEvents = "none";
+      } else {
+         processMenu.style.pointerEvents = "all";
+      }
+   })
+
+
+} else {}
 
 const colorOptions = {
    root: null, // it is the viewport
@@ -25,18 +53,30 @@ const colorOptions = {
 const colorObserver = new IntersectionObserver(function (entries, colorObserver) {
    entries.forEach(entry => {
       if (!entry.isIntersecting) {
-         inactiveTabs.forEach(e => e.classList.remove('black-links'))
-         collectionLinks.forEach(e => e.classList.remove('black-links'));
-         inactiveTabs.forEach(e => e.classList.add('white-links'))
-         collectionLinks.forEach(e => e.classList.add('white-links'));
+         inactiveTabs.forEach(e => {
+            e.classList.remove('black-links');
+            e.classList.add('white-links');
+         });
+         collectionLinks.forEach(e => {
+            e.classList.remove('black-links');
+            e.classList.add('white-links')
+         })
          document.querySelector('.user-border').style.borderColor = "white";
          audiobtn.style.display = "block";
+
       } else {
-         inactiveTabs.forEach(e => e.classList.remove('white-links'))
-         collectionLinks.forEach(e => e.classList.remove('white-links'));
-         inactiveTabs.forEach(e => e.classList.add('black-links'))
-         collectionLinks.forEach(e => e.classList.add('black-links'));
+         inactiveTabs.forEach(e => {
+            e.classList.remove('white-links');
+            e.classList.add('black-links')
+         })
+         collectionLinks.forEach(e => {
+            e.classList.remove('white-links');
+            e.classList.add('black-links');
+         });
+
          document.querySelector('.user-border').style.borderColor = "black";
+
+
       }
    })
 }, colorOptions);
@@ -77,23 +117,28 @@ const beActive = new IntersectionObserver(function (entries, beActive) {
    entries.forEach(entry => {
       if (entry.target.id === 'about' && entry.isIntersecting) {
          tabs.forEach(tab => {
-            tab.classList.remove('active')});
+            tab.classList.remove('active')
+         });
          tabs[1].classList.add('active');
       } else if (entry.target.id === 'researchFilm' && entry.isIntersecting) {
          tabs.forEach(tab => {
-            tab.classList.remove('active')});
+            tab.classList.remove('active')
+         });
          tabs[2].classList.add('active');
       } else if (entry.target.id === 'stills' && entry.isIntersecting) {
          tabs.forEach(tab => {
-            tab.classList.remove('active')});
+            tab.classList.remove('active')
+         });
          tabs[3].classList.add('active');
       } else if (entry.target.id === 'lookbook' && entry.isIntersecting) {
          tabs.forEach(tab => {
-            tab.classList.remove('active')});
+            tab.classList.remove('active')
+         });
          tabs[4].classList.add('active');
       } else if (entry.target.id === 'show' && entry.isIntersecting) {
          tabs.forEach(tab => {
-            tab.classList.remove('active')});
+            tab.classList.remove('active')
+         });
          tabs[0].classList.add('active');
       }
    })
@@ -130,15 +175,6 @@ if (!playbtn) {
       }
    })
 }
-//  lookbook slider
-
-const slider = document.querySelector('.slider');
-const sliderImages = document.querySelectorAll('.slider img');
-
-//  buttons
-
-const leftbtn = document.querySelector('#left');
-const rightbtn = document.querySelector('#right');
 
 let counter = 1;
 const size = sliderImages[0].clientWidth;
