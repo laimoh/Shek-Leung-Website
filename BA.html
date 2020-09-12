@@ -9,11 +9,7 @@
    <link rel="stylesheet" href="/css/normalize.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
    <link rel="stylesheet" href="/css/style.css">
-   <link rel='stylesheet' media='only screen 
-   and (min-device-width: 375px) 
-   and (max-device-width: 812px) 
-   and (-webkit-min-device-pixel-ratio: 3)
-   and (orientation: portrait)' href='css/mobile.css' />
+   <link rel='stylesheet' href='css/mobile.css' />
 </head>
 
 <body class="col">
@@ -37,8 +33,26 @@
          </div>
          <a href="/index.html" class="info-back">Back</a>
       </div>
+      <div class="mobile__header-controls">
+         <div class="mobile__nav">
+            <button class="mobile__more">+</button>
+            <div class="mobile__process-nav">
+               <a href="#show" data-tab-target="#show" class="mobile__tab">Show</a>
+               <a href="#about" data-tab-target="#about" class="mobile__tab">About</a>
+               <a href="#researchFilm-ba" data-tab-target="#researchFilm" class="mobile__tab">Research Film</a>
+               <a href="#stills-ba" data-tab-target="#stills" class="mobile__tab">Stills</a>
+               <a href="#lookbook" data-tab-target="#lookbook" class="mobile__tab">Lookbook</a>
+            </div>
+            <div class="mobile__main-nav">
+               <a class="mabtn" href="/MA.html">MA</a>
+               <a class="capbtn" href="/capsule.html">Capsule</a>
+               <a class="babtn user-border" href="/BA.html">BA</a>
+            </div>
+         </div>
+         <a href="/index.html" class="info-back">Back</a>
+      </div>
    </nav>
-   <main>
+   <main class="mobile__main">
       <div class="tab-content animate__animated animate__fadeIn">
          <div id="show" data-tab-content>
             <div class="video-wrapper">
@@ -51,7 +65,6 @@
          <div id="about" data-tab-content>
             <div class="about-text black-text">
                <div class="proj-header fade-in">
-
                   <p><b>
                         I realise i didn’t had the luxury of creating a home video as a kid, hence I wanted to
                         use this opportunity to present my collection in the form of a film.
@@ -95,21 +108,20 @@
                      gallery. The catwalk itself results in the third sequel of my film series.
                   </p>
                </div>
-            </div>
-
+            </div> 
          </div>
 
          <div id="researchFilm-ba" data-tab-content>
-            <div class="video-wrapper-ba  black-text fade-in">
+             <div class=" margin-film video-wrapper-ba  black-text fade-in">
                <p>Dear You (2017)</p>
-               <video class="mood2" loop video controls poster="img/BA/Screenshot 2020-08-24 at 12.10.24 am.png"
+               <video class="mood2" video controls poster="img/BA/Screenshot 2020-08-24 at 12.10.24 am.png"
                   preload="metadata">
                   <source src="/img/BA/dear you,.mp4" type="video/mp4">
                </video>
-            </div>
+            </div> 
             <div class="video-wrapper-ba black-text fade-in">
                <p>Paper Boys (2018)</p>
-               <video class="mood" loop video controls poster="/img/BA/Screenshot 2020-08-24 at 12.10.05 am.png"
+               <video class="mood" video controls poster="/img/BA/Screenshot 2020-08-24 at 12.10.05 am.png"
                   preload="metadata">
                   <source src="/img/BA/Paper Boys.mp4" type="video/mp4">
                </video>
@@ -151,11 +163,11 @@
 
                      and the BAFCSM team</p>
                </div>
-            </div>
+            </div> 
          </div>
 
          <div id="stills-ba" data-tab-content>
-            <div class="stills">
+            <div class="stills-ba">
                <div class="still-wrapper-ba">
                   <img class="front-img" loading="lazy" src="/img/BA/stills/01.jpg" alt="still front">
                   <img class="back-img" loading="lazy" src="/img/BA/stills/02.jpg" alt="still back">
@@ -187,7 +199,7 @@
             <div class="lookbook-nav">
                <button id="left">←</button>
                <button id="right">→</button>
-            </div>
+            </div> 
             <div class="lookbook">
                <div class="slider">
                   <img src="/img/BA/lookbook/17.jpg" id="lastClone" alt="">

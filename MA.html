@@ -9,11 +9,7 @@
    <link rel="stylesheet" href="/css/normalize.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
    <link rel="stylesheet" href="/css/style.css">
-   <link rel='stylesheet' media='only screen 
-   and (min-device-width: 375px) 
-   and (max-device-width: 812px) 
-   and (-webkit-min-device-pixel-ratio: 3)
-   and (orientation: portrait)' href='css/mobile.css'/>
+   <link rel='stylesheet' href='css/mobile.css' />
 
 </head>
 
@@ -38,9 +34,27 @@
          </div>
          <a href="/index.html" class="info-back">Back</a>
       </div>
+      <div class="mobile__header-controls">
+            <div class="mobile__nav">
+               <button class="mobile__more">+</button>
+               <div class="mobile__process-nav">
+                  <a href="#show" data-tab-target="#show" class="mobile__tab">Show</a>
+                  <a href="#about" data-tab-target="#about" class="mobile__tab">About</a>
+                  <a href="#researchFilm" data-tab-target="#researchFilm" class="mobile__tab">Research Film</a>
+                  <a href="#stills" data-tab-target="#stills" class="mobile__tab">Stills</a>
+                  <a href="#lookbook" data-tab-target="#lookbook" class="mobile__tab">Lookbook</a>
+               </div>
+               <div class="mobile__main-nav">
+                  <a class="mabtn user-border" href="/MA.html">MA</a>
+                  <a class="capbtn" href="/capsule.html">Capsule</a>
+                  <a class="babtn" href="/BA.html">BA</a>
+               </div>
+            </div>
+            <a href="/index.html" class="info-back">Back</a>
+         </div>
    </nav>
 
-   <main>
+   <main class="mobile__main">
       <div class="tab-content animate__animated animate__fadeIn">
 
          <div id="show" data-tab-content class="active active__mobile">
@@ -50,7 +64,6 @@
                </video>
             </div>
          </div>
-
          <div id="about" data-tab-content>
             <div class="about-text black-text">
                <div class="proj-header fade-in">
@@ -100,7 +113,6 @@
                </div>
             </div>
          </div>
-
 
          <div id="researchFilm" class="black-text" data-tab-content>
             <div class="video-wrapper2 fade-in">
@@ -208,9 +220,14 @@
          </div>
 
       </div>
-
    </main>
-   <script defer src="/js/collections.js"></script>
+   <!-- <script>
+      const mq = window.matchMedia("screen and(min-device-width: 375px and (max-device-width: 812px) and(-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)");
+      if (mq.matches) {
+
+      } else {}
+   </script> -->
+   <script src="js/collections.js"></script>
 </body>
 
 </html>

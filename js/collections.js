@@ -27,23 +27,81 @@ const sliderImages = document.querySelectorAll('.slider img');
 const leftbtn = document.querySelector('#left');
 const rightbtn = document.querySelector('#right');
 
-const morebtn = document.querySelector('.mobile__more');
-const processMenu = document.querySelector('.mobile__process-nav');
 
-if (window.matchMedia("(max-device-width: 850px)").matches) {
+const mediaQuery = window.matchMedia('(max-device-width: 850px) and (-webkit-device-pixel-ratio: 3)')
+
+if (mediaQuery.matches) {
+   const morebtn = document.querySelector('.mobile__more');
+   const processMenu = document.querySelector('.mobile__process-nav');
    morebtn.addEventListener('click', () => {
       processMenu.classList.toggle('fade');
       let menuOpen = processMenu.classList.contains('fade');
       if (!menuOpen) {
-         console.log(menuOpen)
          processMenu.style.pointerEvents = "none";
       } else {
          processMenu.style.pointerEvents = "all";
       }
    })
 
+   const mobileTabs = document.querySelectorAll('.mobile__tab');
+   const mobileLinks = document.querySelectorAll('.mobile__header-controls a');
 
-} else {}
+   mobileTabs.forEach(mt => {
+      mt.addEventListener('click', () => {
+         setTimeout(changeTextColor, 500)
+      })
+   })
+
+   function changeTextColor() {
+      const url = window.location.href
+      if (url.includes('#show')) {
+         morebtn.style.color = "white";
+         processMenu.style.borderColor = "white";
+         processMenu.classList.remove('bgColor');
+         mobileLinks.forEach(ml => {
+            ml.style.color = "white";
+         })
+         document.querySelector('.user-border').style.borderColor = "white";
+      } else if (url.includes('#about')) {
+         morebtn.style.color = "black";
+         processMenu.style.borderColor = "black";
+         processMenu.classList.add('bgColor');
+         mobileLinks.forEach(ml => {
+            ml.style.color = "black";
+         });
+         document.querySelector('.user-border').style.borderColor = "black";
+      } else if (url.includes('#researchFilm') || url.includes('#researchFilm-ba')) {
+         morebtn.style.color = "black";
+         processMenu.style.borderColor = "black";
+         processMenu.classList.add('bgColor');
+         mobileLinks.forEach(ml => {
+            ml.style.color = "black";
+         })
+         document.querySelector('.user-border').style.borderColor = "black";
+      } else if (url.includes('#stills') || url.includes('#stills-ba')) {
+         morebtn.style.color = "white";
+         processMenu.style.borderColor = "white";
+         processMenu.classList.remove('bgColor');
+         mobileLinks.forEach(ml => {
+            ml.style.color = "white";
+         })
+         document.querySelector('.user-border').style.borderColor = "black";
+      } else if (url.includes('#lookbook')) {
+         morebtn.style.color = "black";
+         processMenu.style.borderColor = "black";
+         processMenu.classList.add('bgColor');
+         mobileLinks.forEach(ml => {
+            ml.style.color = "black";
+         })
+         document.querySelector('.user-border').style.borderColor = "black";
+      } else {}
+   }
+
+
+} else {
+
+}
+
 
 const colorOptions = {
    root: null, // it is the viewport

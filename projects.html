@@ -8,11 +8,7 @@
    <link rel="stylesheet" href="/css/normalize.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
    <link rel="stylesheet" href="/css/style.css">
-   <link rel='stylesheet' media='only screen 
-   and (min-device-width: 375px) 
-   and (max-device-width: 812px) 
-   and (-webkit-min-device-pixel-ratio: 3)
-   and (orientation: portrait)' href='css/mobile.css'/>
+   <link rel='stylesheet' href='css/mobile.css' />
 
    <title>Shek Leung</title>
 </head>
@@ -53,7 +49,7 @@
                   </ul>
                </div>
                <button class="carousel__button carousel__button--right">→</button>
-               
+
                <div class="vid-nav">
                   <p class="carousel__slide-text">BLUE → Research Film (2015)</p>
                   <span class="play">▶</span>
@@ -107,158 +103,174 @@
 
    </div>
    <script>
-
-const projTabs = document.querySelectorAll('nav a');
-const directorSt = document.querySelector('.directorSt');
-const dearYou = document.querySelector('.dearYou');
-const archiveFilms = document.querySelector('.archiveFilms')
-
-
-if(!archiveFilms) {} else{
-archiveFilms.addEventListener('click', () => {
-   projTabs.forEach(tab => {
-      tab.classList.remove('active-proj');
-      tab.classList.add('link-color');
-      archiveFilms.classList.remove('link-color');
-      archiveFilms.classList.add('active-proj');
-   })
-})
-}
-
-if(!dearYou) {} else {
-dearYou.addEventListener('click', () => {
-   projTabs.forEach(tab => {
-      tab.classList.remove('active-proj');
-      tab.classList.add('link-color');
-      dearYou.classList.remove('link-color');
-      dearYou.classList.add('active-proj')
-   })
-})
-}
-if(!directorSt) {} else {
-directorSt.addEventListener('click', () => {
-   projTabs.forEach(tab => {
-      tab.classList.remove('active-proj');
-      tab.classList.add('link-color');
-      directorSt.classList.remove('link-color');
-      directorSt.classList.add('active-proj')
-   })
-})
-}
+      const projTabs = document.querySelectorAll('nav a');
+      const directorSt = document.querySelector('.directorSt');
+      const dearYou = document.querySelector('.dearYou');
+      const archiveFilms = document.querySelector('.archiveFilms')
 
 
-const track = document.querySelector('.carousel__track'); //ul tag
-const slides = Array.from(track.children); //li tags
-const nextBtn = document.querySelector('.carousel__button--right')
-const prevBtn = document.querySelector('.carousel__button--left');
-const slideWidth = slides[0].getBoundingClientRect().width;
-const videoText = document.querySelector(".carousel__slide-text");
-const carouselVideos = document.querySelectorAll('.carousel__video');
-const blue = document.querySelector('#blue');
-const lvProj = document.querySelector('#lvproj');
-const walking = document.querySelector('#walking');
-const audio = document.querySelector('.vid-nav .audio');
-const play = document.querySelector('.play');
-
-
-const setSlidePosition = (slide, index) => {
-   slide.style.left = slideWidth * index + "px";
-}
-slides.forEach(setSlidePosition);
-
-
-const moveToSlide = (track, currentSlide, targetSlide) => {
-   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
-   currentSlide.classList.remove('current-slide');
-   targetSlide.classList.add('current-slide');
-   if (targetSlide === slides[1]) {
-      videoText.innerHTML = "LV Project → Hologram Presentation (2016) ";
-
-   } else if (targetSlide === slides[2]) {
-      videoText.innerHTML = "We Create Paths By Walking (2016)";
-
-   } else if (targetSlide === slides[0]) {
-      videoText.innerHTML = "BLUE → Research Film (2015)";
-
-   }
-}
-
-
-prevBtn.addEventListener('click', e => {
-   const currentSlide = track.querySelector('.current-slide');
-   const prevSlide = currentSlide.previousElementSibling;
-   moveToSlide(track, currentSlide, prevSlide);
-
-})
-
-
-nextBtn.addEventListener('click', e => {
-   // how much to move one slide?
-   const currentSlide = track.querySelector('.current-slide');
-   const nextSlide = currentSlide.nextElementSibling;
-   moveToSlide(track, currentSlide, nextSlide);
-})
-
-if (window.matchMedia("(max-width: 875px)").matches) {
-   carouselVideos.forEach(v => {
-      v.controls = true;
-;   })
-} else {
-  /* The viewport is greater than 700 pixels wide */
-}
-
-
-   play.addEventListener('click', () => {
-
-      if (slides[0].classList.contains('current-slide')) {
-         symbolSwitch(blue)
-
-      } else if (slides[1].classList.contains('current-slide')) {
-         symbolSwitch(lvProj)
-      } else if (slides[2].classList.contains('current-slide')) {
-         symbolSwitch(walking)
+      if (!archiveFilms) {} else {
+         archiveFilms.addEventListener('click', () => {
+            projTabs.forEach(tab => {
+               tab.classList.remove('active-proj');
+               tab.classList.add('link-color');
+               archiveFilms.classList.remove('link-color');
+               archiveFilms.classList.add('active-proj');
+            })
+         })
       }
-   })
 
-
-function symbolSwitch(element) {
-
-   if (element.paused) {
-      element.play();
-      audio.classList.toggle('blinking');
-      play.innerHTML = "||"
-   } else {
-      element.pause();
-      play.innerHTML = "▶";
-      audio.classList.toggle('blinking');
-
-   }
-}
-
-
-   audio.addEventListener('click', () => {
-
-      if (slides[0].classList.contains('current-slide')) {
-         symbolBlink(blue)
-
-      } else if (slides[1].classList.contains('current-slide')) {
-         symbolBlink(lvProj)
-      } else if (slides[2].classList.contains('current-slide')) {
-         symbolBlink(walking)
+      if (!dearYou) {} else {
+         dearYou.addEventListener('click', () => {
+            projTabs.forEach(tab => {
+               tab.classList.remove('active-proj');
+               tab.classList.add('link-color');
+               dearYou.classList.remove('link-color');
+               dearYou.classList.add('active-proj')
+            })
+         })
       }
-   })
+      if (!directorSt) {} else {
+         directorSt.addEventListener('click', () => {
+            projTabs.forEach(tab => {
+               tab.classList.remove('active-proj');
+               tab.classList.add('link-color');
+               directorSt.classList.remove('link-color');
+               directorSt.classList.add('active-proj')
+            })
+         })
+      }
 
 
-function symbolBlink(element) {
-   if (element.muted === false) {
-      element.muted = true;
-      audio.classList.toggle('blinking');
-   } else {
-      element.muted = false;
-      audio.classList.toggle('blinking');
-   }
-}
+      const track = document.querySelector('.carousel__track');
+      const slides = Array.from(track.children);
+      const nextBtn = document.querySelector('.carousel__button--right')
+      const prevBtn = document.querySelector('.carousel__button--left');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const videoText = document.querySelector(".carousel__slide-text");
+      const carouselVideos = document.querySelectorAll('.carousel__video');
+      const blue = document.querySelector('#blue');
+      const lvProj = document.querySelector('#lvproj');
+      const walking = document.querySelector('#walking');
+      const audio = document.querySelector('.vid-nav .audio');
+      const play = document.querySelector('.play');
 
+
+      const setSlidePosition = (slide, index) => {
+         slide.style.left = slideWidth * index + "px";
+      }
+      slides.forEach(setSlidePosition);
+
+
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+         track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+         currentSlide.classList.remove('current-slide');
+         targetSlide.classList.add('current-slide');
+         if (targetSlide === slides[1]) {
+            videoText.innerHTML = "LV Project → Hologram Presentation (2016) ";
+            nextBtn.style.display = "block";
+            prevBtn.style.display = "block";
+
+         } else if (targetSlide === slides[2]) {
+            videoText.innerHTML = "We Create Paths By Walking (2016)";
+            nextBtn.style.display = "none";
+            prevBtn.style.display = "block";
+
+         } else if (targetSlide === slides[0]) {
+            videoText.innerHTML = "BLUE → Research Film (2015)";
+            nextBtn.style.display = "block";
+            prevBtn.style.display = "none";
+         }
+      }
+
+
+      prevBtn.addEventListener('click', e => {
+         const currentSlide = track.querySelector('.current-slide');
+         const prevSlide = currentSlide.previousElementSibling;
+         moveToSlide(track, currentSlide, prevSlide);
+         carouselVideos.forEach(v => {
+            if (!v.isPaused) {
+               v.pause();
+               audio.classList.remove('blinking');
+               play.innerHTML = "▶";
+            };
+         })
+
+      })
+
+
+      nextBtn.addEventListener('click', e => {
+         const currentSlide = track.querySelector('.current-slide');
+         const nextSlide = currentSlide.nextElementSibling;
+         moveToSlide(track, currentSlide, nextSlide);
+         carouselVideos.forEach(v => {
+            if (!v.isPaused) {
+               v.pause();
+               audio.classList.remove('blinking');
+               play.innerHTML = "▶";
+            };
+         })
+      })
+
+      if (window.matchMedia("(max-width: 1000px)").matches) {
+         carouselVideos.forEach(v => {
+            v.controls = true;;
+         })
+      } else {
+         /* The viewport is greater than 700 pixels wide */
+      }
+
+
+      play.addEventListener('click', () => {
+         audio.classList.add('blinking');
+         if (slides[0].classList.contains('current-slide')) {
+            symbolSwitch(blue)
+         } else if (slides[1].classList.contains('current-slide')) {
+            symbolSwitch(lvProj)
+         } else if (slides[2].classList.contains('current-slide')) {
+            symbolSwitch(walking);
+         }
+      })
+
+
+      function symbolSwitch(element) {
+
+         if (element.paused) {
+            element.play();
+            play.innerHTML = "||"
+            if (element.muted) {
+               audio.classList.remove('blinking');
+            }
+         } else {
+            element.pause();
+            play.innerHTML = "▶";
+            audio.classList.remove('blinking');
+         }
+
+      }
+      audio.addEventListener('click', () => {
+
+         if (slides[0].classList.contains('current-slide')) {
+            symbolBlink(blue)
+
+         } else if (slides[1].classList.contains('current-slide')) {
+            symbolBlink(lvProj)
+         } else if (slides[2].classList.contains('current-slide')) {
+            symbolBlink(walking)
+         }
+      })
+
+
+      function symbolBlink(element) {
+         if (element.muted === true && (!element.isPaused)) {
+            element.muted = false;
+            audio.classList.add('blinking');
+         } else {
+            element.muted = true;
+            audio.classList.remove('blinking');
+
+         }
+      }
    </script>
    </div>
 </body>

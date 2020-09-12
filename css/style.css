@@ -381,7 +381,7 @@ body {
 
 .contact-wrapper ul {
    position: absolute;
-   /* margin-left:0; */
+   margin-left:-4rem;
    margin-top: 5vh;
    color: black;
    width: 15vw;
@@ -402,6 +402,10 @@ body {
    -moz-transform: translateY(-10px);
    -moz-transition: all 0.4s ease;
 
+}
+
+.contact-wrapper ul li a {
+   text-align: right;
 }
 
 
@@ -451,15 +455,15 @@ body {
 
 .contact-a ul {
    position: absolute;
-   left: -10vw;
-   margin-top: 6vh;
+   margin-left:-4rem;
+   margin-top: 5vh;
    color: black;
-   width: 300px;
-   height: 150px;
+   width: 15vw;
+   height: 20vh;
    font-weight: bold;
    display: flex;
    flex-direction: column;
-   /* justify-content: space-around; */
+   justify-content: space-around;
    list-style: none;
    text-transform: uppercase;
    font-size: 1rem;
@@ -610,7 +614,7 @@ body {
 
 .stockist ul {
    position: absolute;
-   left: 0;
+   left: -4rem;
    margin-top: -4vh;
    width: 8vw;
    height: 10vw;
@@ -621,6 +625,7 @@ body {
    list-style: none;
    text-transform: uppercase;
    font-size: 1rem;
+   white-space: nowrap;
    opacity: 0;
    transform: translateY(-10px);
    transition: all 0.4s ease;
@@ -653,12 +658,12 @@ body {
 .crossfade {
    /* border: 1px solid orange; */
    position: relative;
-   width: 42vw;
+   width: 40vw;
    height: 100vh;
    left: 0;
    padding: 0;
    margin: 0;
-   top: -93vh;
+   top: -90vh;
    z-index: -1;
 }
 
@@ -704,7 +709,7 @@ body {
 .projects-container a {
    font-family: Helvetica, sans-serif;
    font-weight: bold;
-   font-size: 1rem;
+   font-size: 1.2rem;
    text-decoration: none;
    text-transform: uppercase;
    transition: all 1s;
@@ -845,6 +850,7 @@ body {
 
 .carousel__button--left {
    left: -6vw;
+   display: none;
 }
 
 .carousel__button--right {
@@ -941,7 +947,7 @@ audio {
 .nav-container {
    position: fixed;
    margin: 0px;
-
+   z-index: 100;
 }
 
 .nav-bar {
@@ -1030,8 +1036,6 @@ audio {
    overflow-x: visible;
    overflow-y: hidden;
    display: flex;
-   /* flex: row nowrap;
-   justify-content: flex-start; */
 
 }
 
@@ -1245,15 +1249,11 @@ audio {
    align-items: center;
 }
 
-.mood {
+.mood, .mood2 {
    width: 100% !important;
    height: auto !important;
 }
 
-.mood2 {
-   width: 100% !important;
-   height: auto !important;
-}
 
 #stills {
    width: 260vw;
@@ -1266,6 +1266,13 @@ audio {
 }
 
 .stills {
+   display: flex;
+   width: 100%;
+   height: 100%;
+
+}
+
+.stills-ba {
    display: flex;
    width: 100%;
    height: 100%;
@@ -1290,7 +1297,6 @@ audio {
 }
 
 .still-wrapper-ba {
-   /* border: 1px solid orange; */
    position: relative;
    left: 5vw;
    width: 33vw;
@@ -1325,8 +1331,6 @@ audio {
    width: 100vw;
    height: 100vh;
 }
-
-
 
 .lookbook-nav {
    width: 70vw;
