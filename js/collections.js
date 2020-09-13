@@ -19,15 +19,6 @@ const faders = document.querySelectorAll('.fade-in');
 
 //  lookbook slider
 
-const slider = document.querySelector('.slider');
-const sliderImages = document.querySelectorAll('.slider img');
-
-//  buttons
-
-const leftbtn = document.querySelector('#left');
-const rightbtn = document.querySelector('#right');
-
-
 const mediaQuery = window.matchMedia('(max-device-width: 850px) and (-webkit-device-pixel-ratio: 3)')
 
 if (mediaQuery.matches) {
@@ -178,12 +169,12 @@ const beActive = new IntersectionObserver(function (entries, beActive) {
             tab.classList.remove('active')
          });
          tabs[1].classList.add('active');
-      } else if (entry.target.id === 'researchFilm' && entry.isIntersecting) {
+      } else if ((entry.target.id === 'researchFilm' ||entry.target.id === 'researchFilm-ba') && entry.isIntersecting) {
          tabs.forEach(tab => {
             tab.classList.remove('active')
          });
          tabs[2].classList.add('active');
-      } else if (entry.target.id === 'stills' && entry.isIntersecting) {
+      } else if ((entry.target.id === 'stills' || entry.target.id === 'stills-ba') && entry.isIntersecting) {
          tabs.forEach(tab => {
             tab.classList.remove('active')
          });
@@ -233,9 +224,12 @@ if (!playbtn) {
       }
    })
 }
-
+const slider = document.querySelector('.slider');
+const sliderImages = document.querySelectorAll('.slider img');
+const leftbtn = document.querySelector('#left');
+const rightbtn = document.querySelector('#right');
 let counter = 1;
-const size = sliderImages[0].clientWidth;
+const size = (sliderImages[0].clientWidth);
 
 slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
@@ -265,3 +259,8 @@ slider.addEventListener('transitionend', () => {
       slider.style.transform = 'translateX(' + (-size * counter) + 'px)'
    }
 })
+
+// function vw(v) {
+//    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+//    return (v * w) / 100;
+// }

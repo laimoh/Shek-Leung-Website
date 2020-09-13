@@ -44,6 +44,7 @@ body {
 
 }
 
+
 /* mobile styles remove */
 
 .mobile-logo,
@@ -98,7 +99,7 @@ body {
    position: absolute;
    top: 0;
    left: 0;
-   background-image: url('/img/Home/Asset 3.png');
+   background-image: url('/img/Home/Asset-3.jpg');
    background-size: cover;
 
 }
@@ -658,7 +659,7 @@ body {
 .crossfade {
    /* border: 1px solid orange; */
    position: relative;
-   width: 40vw;
+   width: 42vw;
    height: 100vh;
    left: 0;
    padding: 0;
@@ -702,7 +703,6 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   /* border: 1px solid green; */
 
 }
 
@@ -1162,7 +1162,7 @@ audio {
 
 #researchFilm-ba,
 #researchFilm p {
-   font-size: 0.7rem;
+   font-size: 1rem;
    font-family: Helvetica, sans-serif;
    font-style: italic;
    margin-bottom: 1rem;
@@ -1224,7 +1224,7 @@ audio {
    font-style: normal !important;
    padding: 1rem;
    width: 20vw;
-   height: 65vh;
+   height: 63vh;
 }
 
 .credit:hover .credit-text,
