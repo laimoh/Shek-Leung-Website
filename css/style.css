@@ -27,7 +27,6 @@
 }
 
 html {
-   scroll-behavior: smooth;
    padding: 0;
    font-size: 1.7vh;
    font-size-adjust: none;
@@ -221,14 +220,13 @@ body {
    top: 0;
    display: flex;
    justify-content: space-around;
-   overflow-y: scroll;
    box-shadow: -10px 0px 10px 1px #aaaaaa;
 
 }
 
 
 .img-grid {
-
+   overflow-y: scroll;
    width: 70vw;
    height: 88vh;
    display: flex;
@@ -248,8 +246,6 @@ body {
    width: 20vw;
    height: 50vh;
    padding: 1.5rem;
-
-
 }
 
 .card {
@@ -257,7 +253,6 @@ body {
    width: 100%;
    height: 100%;
    border: 1px solid black;
-
 }
 
 /* card front styling */
@@ -269,7 +264,7 @@ body {
    width: 100%;
    height: 100%;
    transition: opacity 1s;
-   display: block;
+   /* display: block; */
 
 
 }
@@ -292,24 +287,14 @@ body {
    height: 100%;
    top: 0;
    left: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   z-index: -1;
+   display: none;
 }
 
 
 .card:hover .back {
 
-   z-index: 100;
+   display: block;
 }
-
-/* .face.back:hover {
-   background-position: left;
-
-} */
-
-
 
 /* card link styling */
 
@@ -320,8 +305,7 @@ body {
    font-size: 1.8rem;
    display: block;
    color: white;
-   padding: 2rem;
-   left: -5vw;
+   margin: 7rem 1rem 5rem 2rem;
    text-decoration: none;
 
 }
@@ -382,7 +366,7 @@ body {
 
 .contact-wrapper ul {
    position: absolute;
-   margin-left:-4rem;
+   margin-left: -3rem;
    margin-top: 5vh;
    color: black;
    width: 15vw;
@@ -456,7 +440,7 @@ body {
 
 .contact-a ul {
    position: absolute;
-   margin-left:-4rem;
+   margin-left: -4rem;
    margin-top: 5vh;
    color: black;
    width: 15vw;
@@ -615,9 +599,9 @@ body {
 
 .stockist ul {
    position: absolute;
-   left: -4rem;
-   margin-top: -4vh;
-   width: 8vw;
+   left: -3vw;
+   margin-top: -3rem;
+   width: 9vw;
    height: 10vw;
    font-weight: bold;
    display: flex;
@@ -670,7 +654,7 @@ body {
 
 
 .crossfade img {
-   width: 100%;
+   width: auto;
    height: 100%;
    position: absolute;
    transition: opacity .5s ease-in;
@@ -689,11 +673,12 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   scroll-behavior: smooth;
    overflow: hidden;
 }
 
-
+a:hover {
+   opacity: 0.5;
+}
 .projects-container nav {
 
    width: 80vw;
@@ -713,6 +698,7 @@ body {
    text-decoration: none;
    text-transform: uppercase;
    transition: all 1s;
+
 }
 
 .link-color {
@@ -730,8 +716,10 @@ body {
    width: 100vw;
    height: 100vh;
    display: flex;
-   scroll-behavior: smooth;
-
+   /* overflow-x: scroll;
+   overflow-y: hidden; */
+   overflow: hidden;
+   /* scroll-behavior: smooth; */
 }
 
 #archiveFilms {
@@ -763,7 +751,7 @@ body {
    font-weight: bold;
    letter-spacing: 0.1rem;
    transition: opacity 1s;
-
+   margin:0;
 }
 
 
@@ -805,7 +793,7 @@ body {
 .carousel {
    position: relative;
    height: 75vh;
-   width: 75%;
+   width: 75vw;
    margin: 0 auto;
 
 }
@@ -893,6 +881,7 @@ body {
    text-transform: uppercase;
    color: black;
    letter-spacing: 0.2rem;
+   text-align: center;
 
 }
 
@@ -927,6 +916,10 @@ audio {
    min-height: 90vh;
 }
 
+#soundDS .container__credit {
+   width: 15vw;
+}
+
 .active-proj {
    background-color: black;
    color: var(--grCol3);
@@ -937,10 +930,6 @@ audio {
 
 .col {
    overflow-y: hidden;
-}
-
-.col::-webkit-scrollbar {
-   /* display: block; */
 }
 
 
@@ -1032,7 +1021,7 @@ audio {
    left: 0;
    top: 0;
    z-index: -10;
-   scroll-behavior: smooth;
+   /* scroll-behavior: smooth; */
    overflow-x: visible;
    overflow-y: hidden;
    display: flex;
@@ -1249,7 +1238,8 @@ audio {
    align-items: center;
 }
 
-.mood, .mood2 {
+.mood,
+.mood2 {
    width: 100% !important;
    height: auto !important;
 }
@@ -1282,13 +1272,14 @@ audio {
 .still-wrapper {
    width: 80vw;
    height: 100vh;
+   display: flex;
    overflow: hidden;
 }
 
 .inner-img {
    /* Just in case there are inline attributes */
-   width: 100% !important;
-   height: auto !important;
+   width: 100%;
+   height: auto;
    transition: 0.3s;
 }
 
@@ -1298,7 +1289,7 @@ audio {
 
 .still-wrapper-ba {
    position: relative;
-   left: 5vw;
+   display: flex;
    width: 33vw;
    height: 100vh;
 }
@@ -1307,8 +1298,8 @@ audio {
    position: absolute;
    top: 0;
    left: 0;
-   height: auto;
-   width: 100%;
+   height: 100%;
+   width: auto;
    transition: opacity ease 250ms;
 
 }
@@ -1317,8 +1308,8 @@ audio {
    position: absolute;
    top: 0;
    left: 0;
-   height: auto;
-   width: 100%;
+   height: 100%;
+   width: auto;
    opacity: 1;
    z-index: -5;
 }
@@ -1330,6 +1321,9 @@ audio {
 #lookbook {
    width: 100vw;
    height: 100vh;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
 }
 
 .lookbook-nav {
@@ -1341,6 +1335,7 @@ audio {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   z-index: 10;
 }
 
 button {
@@ -1348,7 +1343,6 @@ button {
    outline: none;
    background: transparent;
    font-size: 2rem;
-   /* font-weight: bold; */
    cursor: pointer;
 }
 
@@ -1357,7 +1351,6 @@ button {
    outline: none;
    background: transparent;
    font-size: 2rem;
-   /* font-weight: bold; */
    cursor: pointer;
 }
 
@@ -1365,30 +1358,110 @@ button:hover {
    opacity: 0.4;
 }
 
-.lookbook {
+div .lookbook {
    width: 56vw;
+}
+
+.lookbook {
    height: 91vh;
    margin: auto;
    overflow: hidden;
 }
 
-.lookbook img {
+div.slider {
+   margin: 0;
+   margin-top: 10vh;
+   height: 81vh;
+   position: relative;
+   top: 0;
+   padding: 0;
    width: 100%;
-   height: auto !important;
+}
+@keyframes slideouttoleft {
+   from {
+      left: 0;
+      visibility: visible;
+   }
+
+   to {
+      left: -100%;
+      visibility: hidden;
+   }
 }
 
-.slider {
-   margin-top: 10vh;
-   display: flex;
-   /* align-items: flex-end; */
-   width: auto;
-   /* height: 700px; */
+@keyframes slideouttoleft {
+   from {
+      left: 0;
+      visibility: visible;
+   }
+
+   to {
+      left: -100%;
+      visibility: hidden;
+   }
 }
+
+@keyframes slideinfromright {
+   from {
+      left: 100%;
+      visibility: visible;
+   }
+
+   to {
+      left: 0;
+      visibility: visible;
+   }
+}
+
+@keyframes slideouttoright {
+   from {
+      left: 0;
+      visibility: visible;
+   }
+
+   to {
+      left: 100%;
+      visibility: hidden;
+   }
+}
+
+@keyframes slideinfromleft {
+   from {
+      left: -100%;
+      visibility: visible;
+   }
+
+   to {
+      left: 0;
+      visibility: visible;
+   }
+}
+
+.slider div {
+   position: absolute;
+   top: 0;
+   left: 0;
+   overflow: hidden;
+   visibility: hidden;
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat no-repeat;
+   animation-duration: 0.4s;
+   animation-delay: 0s;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-timing-function: ease-in;
+   animation-fill-mode: forwards;
+}
+
 
 .capsule-wrapper {
    width: 100vw;
    height: 100vh;
-   /* background: black; */
    display: flex;
    justify-content: center;
    align-items: center;

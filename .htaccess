@@ -1,0 +1,11 @@
+<%EnableSessionState=False
+host = Request.ServerVariables("HTTP_HOST")
+
+if host = "shekleung.com" or host = "www.shekleung.com" then
+response.redirect("https://www.shekleung.com/")
+
+else
+response.redirect("https://www.shekleung.com/error.htm")
+
+end if
+%>
